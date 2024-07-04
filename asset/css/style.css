@@ -23,6 +23,12 @@ p {
     unicode-bidi: isolate;
 }
 
+a {
+    text-decoration: none;
+    display: inline;
+    color: #000;
+}
+
 
 body {
     position: relative;
@@ -174,7 +180,8 @@ h3 {
 
 #blog-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .tabs {
@@ -215,11 +222,108 @@ h3 {
     white-space: nowrap;
 }
 
-#blog-container .blog-content {
+.time {
+    color: #231f20;
+}
 
+.ti-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.blog-content {
+    flex: 70%;
+}
+
+.blog-content .post .blog-body {
+    border-left: 4px solid grey;
+    margin: 1em 0;
+    padding-left: 1em;
+    padding-bottom: .25em;
+}
+
+.content-description {
+    line-height: 1.5em;
+    font-size: 1em;
+}
+.content-description p{
+    margin: 1em 0 !important;
+    padding: 0 !important;
+}
+
+.blog-body ul {
+    padding: 0 0 0 2em;
+}
+
+.blog-content .meta {
+    margin: 1em 0 1.5em;
+    padding: .25em .5em;
+    border: 2px solid grey;
+    border-radius: 4px;
+}
+
+#blog-container .blog-content .blog-body{
+    color: #231f20;
 }
 
 #blog-container .blog-event {
+    flex: 26%;
+    display: block;
+}
 
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+    border-color: gray;
+}
 
+.table {
+    border-spacing: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .5em;
+    background: rgba(0, 0, 0, .01);
+    backdrop-filter: blur(3px);
+}
+
+.table th {
+    height: 2em;
+    color: #fff;
+    background-color: #231f20;
+    border-color: gray;
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    padding: 4px 10px;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+td.user-name, td.personal-info, td.organization-name {
+    padding-left: 1em;
+    text-align: left;
+}
+
+.table td {
+    border-color: #ccc;
+    border-width: 1px;
+    border-style: solid;
+    padding: 7px 5px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.users-table th.username {
+    width: 100%;
+}
+
+.users-table th.rank, .users-table th.points, .users-table th.problems, .users-table th.username {
+    white-space: nowrap;
 }

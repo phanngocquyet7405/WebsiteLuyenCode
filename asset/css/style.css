@@ -327,3 +327,19 @@ td.user-name, td.personal-info, td.organization-name {
 .users-table th.rank, .users-table th.points, .users-table th.problems, .users-table th.username {
     white-space: nowrap;
 }
+
+#footer {
+    text-align: center;
+    height: 44px;
+    border-top: 1px solid #ccc;
+    color: gray;
+    background: #eee;
+    position: absolute;
+    width: 100%;
+    display: block;
+    bottom: 0;
+}
+
+#footer .footer-content a{
+    justify-content: center;
+}

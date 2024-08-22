@@ -53,6 +53,11 @@
                     <a href="/">Dang ky</a>
                 </span>
             </span>
+
+            <div id = "mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
+
         </div>
 
         <div id="content">
@@ -373,6 +378,7 @@
                                         </ul>
                                     </div>
                                  </div>
+
                                  <div class="meta">
                                     <div class="time">
                                         <i class="ti-user"></i>
@@ -554,5 +560,39 @@
                 </span>
             </div>
         </div>
+
+
+        <script>
+
+            var header = document.getElementById('header');
+            var mobileMenu = document.getElementById('mobile-menu');
+            var headerHeight = header.clientHeight;
+    
+            // dong/mo menu
+            mobileMenu.onclick = function() {
+                var isClose = header.clientHeight == headerHeight;
+                if (isClose) {
+                    header.style.height = 'auto';
+                }else {
+                    header.style.height = null;
+                }
+            }
+    
+            // tu dong dong/mo menu khi chon
+            var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+    
+            for (var i = 0;i < menuItems.length; i++){
+                var menuItem = menuItems[i];
+    
+                menuItem.onclick = function(){
+                    var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                    if(isParentMenu){
+                        event.preventDefault();
+                    }else{
+                        header.style.height = null;
+                    }
+                }
+            }
+        </script>
 </body>
 </html>

@@ -43,7 +43,7 @@ body {
 }
 
 #header {
-    height: 46px;
+    height: 28px;
     background-color: #6fb7ff;
     position: fixed;
     top: 0;
@@ -66,15 +66,19 @@ body {
     position: relative;
 }
 
-#nav li a{
+#nav li a {
     color: #000;
     text-decoration: none;
-    line-height: 46px;
+    line-height: 28px;
     font-size: 10px;
-    padding:0 12px;
+    padding: 0 12px;
     text-transform: uppercase;
     display: block;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
 }
+
 
 #nav .subnav{
     position: absolute;
@@ -109,6 +113,29 @@ body {
     line-height: 18px;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#header .mobile-menu-btn {
+    float: right;
+    padding: 0 21px;
+    line-height: 28px;
+    font-size: 10px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon {
+    color: #000;
+}
+
 #user-link {
     top: 0;
     right: 0;
@@ -120,10 +147,12 @@ body {
     text-decoration: none;
     display: inline;
     text-decoration: none;
-    line-height: 46px;
+    line-height: 28px;
     font-size: 10px;
+    height: 100%;
     padding:0 12px;
     text-transform: uppercase;
+    box-sizing: border-box;
 }
 
 /* content */
@@ -159,6 +188,17 @@ h3 {
     border-radius: 4px;
     padding: 0;
     margin: 0;
+}
+
+.sidebox h3 {
+    background: #231f20;
+    border-radius: 4px 4px 0 0;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+.slide-box .ti-crown::before {
+    float: right;
 }
 
 .slide-box .ti-info {
@@ -341,4 +381,80 @@ td.user-name, td.personal-info, td.organization-name {
 
 #footer .footer-content a{
     justify-content: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #nav {
+        flex-direction: column;
+    }
+
+    #nav > li {
+        width: 100%;
+        text-align: center;
+    }
+
+    #user-link {
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+    #content {
+        margin-top: 8em;
+        width: 100%;
+    }
+
+    #blog-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #blog-container .blog-event {
+        flex: 1;
+        margin-bottom: 20px;
+    }
+
+    .blog-content {
+        flex: 1;
+    }
+
+    .tabs > ul > li > a {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .slide-box h3 {
+        font-size: 1.2em;
+    }
+
+    #nav > li a {
+        font-size: 8px;
+        padding: 0 8px;
+    }
+
+    #user-link a {
+        font-size: 8px;
+    }
+
+    .table th, .table td {
+        padding: 5px;
+        font-size: 0.9em;
+    }
+
+    .tabs > ul > li > a {
+        padding: 6px;
+        font-size: 10px;
+    }
 }
